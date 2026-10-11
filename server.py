@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 
 def get_rtsp_url(cam_id, token):
-    # Uses the user's own token, so Supabase RLS decides if they own the camera
+
     r = requests.get(
         f"{SUPABASE_URL}/rest/v1/cameras",
         params={"id": f"eq.{cam_id}", "select": "rtsp_url"},
